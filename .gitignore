@@ -20,6 +20,11 @@ android
 .env
 .env.local
 
+# Rust / Cargo
+target/
+**/*.rs.bk
+*.wasm
+
 # macOS
 .DS_Store
 

@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Trust Up",
-    "slug": "trust-up",
+    "name": "Credence",
+    "slug": "credence",
     "version": "1.0.0",
-    "scheme": "trustup",
+    "scheme": "credence",
     "web": {
       "favicon": "./assets/favicon.png"
     },
@@ -22,7 +22,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.trustup.app"
+      "bundleIdentifier": "com.credence.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -30,7 +30,7 @@
         "backgroundColor": "#ffffff"
       },
       "softwareKeyboardLayoutMode": "pan",
-      "package": "com.trustup.app"
+      "package": "com.credence.app"
     }
   }
 }

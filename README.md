@@ -1,18 +1,21 @@
-<img width="4554" height="1139" alt="TrustUp-Banner" src="https://github.com/user-attachments/assets/ee412e56-c481-49d6-879f-bde52f2b178a" />
+# Credence
 
 <div align="center">
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+![Soroban](https://img.shields.io/badge/Soroban-7D00FF?style=for-the-badge&logo=stellar&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green?style=flat-square)](https://opensource.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![React Native](https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat-square&logo=react)](https://reactnative.dev/)
+[![Soroban SDK](https://img.shields.io/badge/Soroban%20SDK-22.0.0-purple?style=flat-square)](https://soroban.stellar.org/)
 
-**Cross-platform mobile application for Buy Now Pay Later (BNPL) on Stellar Network**
+**Decentralized Buy Now Pay Later (BNPL) protocol & cross-platform mobile application on Stellar Network**
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
 
@@ -20,7 +23,7 @@
 
 ## 📖 About
 
-TrustUp Mobile App is the frontend application for the TrustUp BNPL ecosystem on Stellar blockchain. Built with React Native and Expo, it provides a seamless mobile experience for users to access loans, manage repayments, and interact with the Stellar network.
+Credence is an institutional-grade, decentralized Buy Now Pay Later (BNPL) ecosystem on the Stellar blockchain. Built with Soroban Rust smart contracts and a cross-platform React Native / Expo mobile application, it provides a seamless experience for users to access credit lines, manage loan repayments, earn reputation, and interact with the Stellar network.
 
 ### Key Features
 
@@ -54,49 +57,50 @@ TrustUp Mobile App is the frontend application for the TrustUp BNPL ecosystem on
 - 🎨 **NativeWind** - Tailwind CSS for React Native
 - 🎭 **React Native Reanimated** - Smooth animations
 
-## 📁 Project Structure
+## 📁 Monorepo Structure
+
+The codebase is partitioned into two core components:
+
 ```
-TrustUp-Frontend/
-├── .expo/                      # Expo configuration cache
-├── assets/                     # Static assets (images, fonts)
-├── components/                 # Reusable UI components
-│   ├── pages/                 # Screen components
-│   │   ├── InvestScreen/     # Investment screen
-│   │   ├── SignIn/           # Sign in screen
-│   │   └── CreateAccountScreen/ # Create account screen
-│   └── shared/                # Shared components across app
-│       ├── BottomBar.tsx     # Bottom navigation bar
-│       ├── Header.tsx        # App header component
-│       └── MainLayout.tsx    # Main app layout wrapper
-├── context/                    # React context providers (e.g. auth)
-├── hooks/                      # Domain-specific custom hooks
-├── lib/                        # API client, storage, and other utilities
-├── services/                   # API service modules
-├── theme/                      # Design tokens (colors, etc.)
-├── types/                      # TypeScript type definitions
-├── node_modules/              # Dependencies
-├── .gitignore                 # Git ignore rules
-├── app/                       # Expo Router routes (entry via expo-router/entry)
-│   └── _layout.tsx            # Root layout
-├── app.json                   # Expo app configuration
-├── babel.config.js            # Babel configuration
-├── cesconfig.json             # CES configuration
-├── eslint.config.js           # ESLint configuration
-├── .global.css                # Global CSS styles
-├── metro.config.js            # Metro bundler configuration
-├── nativewind-env.d.ts        # NativeWind TypeScript definitions
-├── package-lock.json          # Locked dependencies
-├── package.json               # Project dependencies and scripts
-├── prettier.config.js         # Prettier configuration
-├── tailwind.config.js         # Tailwind CSS configuration
-└── tsconfig.json              # TypeScript configuration
+Credence/
+├── contracts/               # Soroban smart contracts (Rust)
+│   ├── adapter-trustless-contract/
+│   ├── creditline-contract/
+│   ├── liquidity-pool-contract/
+│   ├── merchant-registry-contract/
+│   ├── parameters-contract/
+│   ├── reputation-contract/
+│   └── tests/integration/
+│
+├── frontend/                # Cross-platform mobile app (React Native / Expo)
+│   ├── app/                 # Expo Router routes
+│   ├── components/          # Reusable UI components
+│   ├── context/             # React context providers
+│   ├── hooks/               # Custom React hooks
+│   ├── services/            # API integration services
+│   └── types/               # TypeScript definitions
+│
+├── Cargo.toml               # Rust workspace configuration
+└── package.json             # Frontend package configuration
 ```
+
+### 1. Smart Contracts (Rust)
+```bash
+# Check all Rust contracts
+cargo check --workspace
+
+# Build contracts to WASM
+cargo build --target wasm32-unknown-unknown --release
+```
+
+### 2. Frontend (React Native / Expo)
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18 LTS or higher
+- Rust 1.75+ & Cargo
 - npm or yarn
 - iOS Simulator (Mac only) or Android Studio
 - Expo Go app (for testing on physical devices)
@@ -104,8 +108,8 @@ TrustUp-Frontend/
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/TrustUp-app/TrustUp-Frontend.git
-cd TrustUp-Frontend
+git clone https://github.com/Credence-app/Credence.git
+cd Credence
 
 # Install dependencies
 npm install
@@ -240,9 +244,8 @@ cd android && ./gradlew clean && cd ..
 ## 📞 Support
 
 - 📖 [Documentation](./docs/)
-- 🐛 [Issue Tracker](https://github.com/TrustUp-app/TrustUp-Frontend/issues)
-- 💬 [Discussions](https://github.com/TrustUp-app/TrustUp-Frontend/discussions)
-- 🔗 [Backend API](https://github.com/TrustUp-app/TrustUp-API)
+- 🐛 [Issue Tracker](https://github.com/Credence-app/Credence/issues)
+- 💬 [Discussions](https://github.com/Credence-app/Credence/discussions)
 
 ## 🙏 Acknowledgments
 
