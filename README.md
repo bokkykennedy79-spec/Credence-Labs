@@ -280,10 +280,10 @@ cd android && ./gradlew clean && cd ..
 </td>
 
 <td align="center">
-  <a href="https://github.com/Benalex8797">
-    <img src="https://avatars.githubusercontent.com/u/198606778?v=4" width="100px;" style="border-radius:50%;" alt="Benalex8797"/><br />
-    <sub><b>🥉 @Benalex8797</b></sub><br />
-    <sub>5 contributions</sub>
+  <a href="https://github.com/akintewe">
+    <img src="https://avatars.githubusercontent.com/u/85641756?v=4" width="100px;" style="border-radius:50%;" alt="akintewe"/><br />
+    <sub><b>🥉 @akintewe</b></sub><br />
+    <sub>6 contributions</sub>
   </a>
 </td>
 
